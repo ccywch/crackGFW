@@ -63,7 +63,11 @@ and the results should be like
 * ![alt tag](/images/clientConfig.jpg)
 * Then set the client as global proxy i.e.,
 * ![alt tag](/images/globalProxy.jpg)
-Now you can try to access to Google, Twitter, Youtube ... in your browser.
+* Now you can try to access to Google, Twitter, Youtube ... in your browser in the windows. 
+You can also download the client for different platforms (Already successfully tested):
+  * [Mac new](https://github.com/shadowsocks/ShadowsocksX-NG/releases)
+  * [Mac old](https://github.com/shadowsocks/shadowsocks-iOS/releases/)
+  * [Android](https://github.com/shadowsocks/shadowsocks-android/releases)
 
 ## PAC file
 PAC (Proxy auto-config) is used to show that what websites that we need to use shadowsocks.
@@ -72,4 +76,15 @@ So, you can add all websites that you cannot access directly or slowly into the 
 The rules are explained in detail in http://www.cnblogs.com/edward2013/p/5560836.html .
 
 
+## TODOS:
+* Intelligent PAC tool like MEOW https://www.loyalsoldier.me/an-easy-guideline-to-fuck-the-gfw/
+* Speed up the server such as
+  * http://yooooh.net/2015/10/10/ipv6-shadowsocks/
+  * http://www.liwenqiao.com/p/shadowsocks-digitalocean-build/
+  * https://github.com/shadowsocks/shadowsocks/wiki/Optimizing-Shadowsocks
 
+## Other tutorials
+* https://www.loyalsoldier.me/fuck-the-gfw-with-my-own-shadowsocks-server/
+* https://www.iwwenbo.com/digitalocean-shadowsocks/
+
+	
