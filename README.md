@@ -1,5 +1,5 @@
 # crackGFW
-In this tutorial, I will introduce the procedures to set up shadowsocks tp jump the Great Fire Wall in China.
+In this tutorial, I will introduce the procedures to set up shadowsocks tp jump the [Great Fire Wall (GFW)](https://en.wikipedia.org/wiki/Great_Firewall) in China.
 Apart from the shadowsocks, we also need to have a VPS as the server, and we use Digital Ocean in this article.
 
 
@@ -20,8 +20,8 @@ If so, you can get results like
 * You will also get the password from the email sent to you.
 
 ## Set up Shadowsocks server
-* Download [Putty](http://www.putty.org/) and then open the software and type "root@yourIP" in the new session.
-And then type the password, and then create new password for your server.
+* In Windows, please download [Putty](http://www.putty.org/) and then open the software and type "root@yourIP" in the new session.
+And then type the password, and create new password for your server (You can use the Terminal in Linux/Mac).
 * ![alt tag](/images/putty.png)
 * Install all dependencies:
 ```bash
@@ -44,6 +44,22 @@ Press 'i' for the insert mode and copy the following content:
     "fast_open": false
 }
 ```
+If you want to open different ports with different passwords, you can change the config file as:
+```
+{
+	"server":"yourServerIP",
+	"port_password": {
+		"8387": "yourPassword1",
+		"8388": "yourPassword2",
+		"8389": "yourPassword3"
+	},
+	"local_port": 1080, 
+	"timeout":600,
+	"method":"aes-256-cfb",
+	"fast_open": false
+}
+```
+
 After that, click "ESC" button, and type ":wq" to save and quit.
 Finally, we launch the server in the background by typing 
 ```bash
@@ -76,12 +92,18 @@ So, you can add all websites that you cannot access directly or slowly into the 
 The rules are explained in detail in http://www.cnblogs.com/edward2013/p/5560836.html .
 
 
+## NOTE:
+* If you cannot break the GFW (e.g., cannot access to Google) for more than one day, it indicates that the server IP is blocked by GFW. You need to destroy the Droplets and launch a new one following the procedures above.
+* There are also some alternative VPS providers such as [Amazon EC2](http://celerysoft.github.io/2016-01-15.html), [Vultr](https://github.com/getlantern/forum/issues/5620), [Bandwagon](http://www.huizhanzhang.com/2017/05/bandwagon-one-key-shadowsocks.html), you can refer to the tutorial to set up the Shadowsocks. I selected Digital Ocean due to the $50 student credits.
+* Apart from Shadowsocks, you can also adopt the [ShadowsocksR](https://github.com/shadowsocksr-backup/shadowsocksr) which is a deviation of Shadowsocks and claims more robust security.
+
 ## TODOS:
 * Intelligent PAC tool like MEOW https://www.loyalsoldier.me/an-easy-guideline-to-fuck-the-gfw/
 * Speed up the server such as
   * http://yooooh.net/2015/10/10/ipv6-shadowsocks/
   * http://www.liwenqiao.com/p/shadowsocks-digitalocean-build/
   * https://github.com/shadowsocks/shadowsocks/wiki/Optimizing-Shadowsocks
+* Some network protocols or algorithms can speed up the Shadowsocks such as [Google BBR](https://cacm.acm.org/magazines/2017/2/212428-bbr-congestion-based-congestion-control/fulltext) or [server speeder](https://github.com/91yun/serverspeeder)
 
 ## Other tutorials
 * https://www.loyalsoldier.me/fuck-the-gfw-with-my-own-shadowsocks-server/
