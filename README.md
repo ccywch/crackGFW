@@ -4,7 +4,7 @@ Apart from the shadowsocks, we also need to have a VPS as the server, and we use
 
 
 ## Set up Digital Ocean
-* Students can get $50 credits from [education pack](https://education.github.com/pack) (if you do not have github account, please register with your university email), then you can get the promo code from the https://education.github.com/pack/offers#digitalocean like
+*You can register an account with some pro with https://m.do.co/c/861b73e67ea5. Note students can get $50 credits from [education pack](https://education.github.com/pack) (if you do not have github account, please register with your university email), then you can get the promo code from the https://education.github.com/pack/offers#digitalocean like
 * ![alt tag](/images/50credit.png)
 * Then go to the [Digital Ocean](https://www.digitalocean.com/) to register an account. 
 Note that you may need to bind your credit card or use Paypel to pay $5 to finish the registration.
